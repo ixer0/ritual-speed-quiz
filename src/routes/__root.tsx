@@ -72,14 +72,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Ritual Speed Quiz" },
+      { name: "description", content: "Test your ritual knowledge at speed" },
+      { property: "og:title", content: "Ritual Speed Quiz" },
+      { property: "og:description", content: "Test your ritual knowledge at speed" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -114,6 +112,21 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <span
+        style={{
+          position: "fixed",
+          bottom: "6px",
+          left: "8px",
+          fontSize: "10px",
+          opacity: 0.4,
+          color: "inherit",
+          pointerEvents: "none",
+          userSelect: "none",
+          zIndex: 9999,
+        }}
+      >
+        BHD' helped.
+      </span>
     </QueryClientProvider>
   );
 }
