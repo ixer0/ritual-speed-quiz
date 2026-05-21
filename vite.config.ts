@@ -1,11 +1,10 @@
-import { tanstackStart } from "@tanstack/react-start/plugin";
+import { defineConfig } from "vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
-import { cloudflare } from "@cloudflare/vite-plugin";
-import { defineConfig } from "vite";
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig({
   plugins: [
     tsConfigPaths(),
     tailwindcss(),
@@ -13,9 +12,8 @@ export default defineConfig(({ mode }) => ({
       server: { entry: "server" },
     }),
     react(),
-    ...(mode === "production" ? [cloudflare()] : []),
   ],
   resolve: {
     dedupe: ["react", "react-dom", "@tanstack/react-router"],
   },
-}));
+});
