@@ -1,0 +1,1 @@
+REVOKE EXECUTE ON FUNCTION public.leaderboard_keep_latest() FROM PUBLIC, anon, authenticated;

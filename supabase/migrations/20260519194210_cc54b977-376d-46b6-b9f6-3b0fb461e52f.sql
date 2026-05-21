@@ -1,0 +1,1 @@
+ALTER TABLE public.leaderboard ADD COLUMN completion_ms INTEGER NOT NULL DEFAULT 0;
